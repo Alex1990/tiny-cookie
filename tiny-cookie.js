@@ -26,6 +26,7 @@
   var cookie = {
 
     get: function(key) {
+      if (!arguments.length) return null;
       key = '(?:^|;)' + escapeRe(key) + (key ? '=' : '') +
             '([^' + (key ? '' : '=') + ';]*?)(?:;|$)';
       var reKey = new RegExp(key);
