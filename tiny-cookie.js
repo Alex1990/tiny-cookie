@@ -23,6 +23,7 @@
 
   'use strict';
 
+  // The public function which can get/set/remove cookie.
   function Cookie(key, value, opts) {
     if (value === undefined) {
       return Cookie.get(key);
@@ -33,26 +34,39 @@
     }
   }
 
+  // Check if the cookie is enabled.
   Cookie.enabled = function() {
-    document.cookie = '__test_key__=1';
-    return !!document.cookie;
+    var key = '__test_key';
+    var enabled;
+
+    document.cookie = key + '=1';
+    enabled = !!document.cookie;
+
+    if (enabled) Cookie.remove(key);
+
+    return enabled;
   };
 
+  // Get the cookie value by the key.
   Cookie.get = function(key) {
-    if (key === undefined) return null;
-    key = '(?:^|;)' + escapeRe(key) + (key ? '=' : '') +
-          '([^' + (key ? '' : '=') + ';]*?)(?:;|$)';
+    if (typeof key !== 'string' || !key) return null;
+
+    key = '(?:^|;)' + escapeRe(key) + '=?([^;]*?)(?:;|$)';
+
     var reKey = new RegExp(key);
     var res = reKey.exec(document.cookie.replace(/\s+/g, ''));
+
     return res !== null ? decodeURIComponent(res[1]) : null;
   };
 
+  // Set a cookie.
   Cookie.set = function(key, value, opts) {
     opts = opts ? convert(opts) : '';
     var cookie = key + '=' + encodeURIComponent(value) + opts;
     document.cookie = cookie;
   };
 
+  // Remove a cookie by the specified key.
   Cookie.remove = function(key) {
     Cookie.set(key, 'a', { expires: new Date().toGMTString() });
   };
@@ -60,10 +74,12 @@
   // Helper function
   // ---------------
 
+  // Escape special characters.
   function escapeRe(str) {
     return str.replace(/[.*+?^$|[\](){}\\-]/g, '\\$&');
   }
 
+  // Convert an object to a cookie option string.
   function convert(opts) {
     var res = '';
     for (var p in opts) {
