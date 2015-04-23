@@ -1,3 +1,26 @@
+describe('Cookie()', function() {
+  it('should return null if no parameter', function() {
+    expect(Cookie()).toBe(null);
+  });
+
+  it('should return the cookie value if only one parameter', function() {
+    document.cookie = 'only_one=value';
+    expect(Cookie('only_one')).toBe('value');
+  });
+
+  it('should remove the cookie value if the second parameter is null', function() {
+    document.cookie = 'second_null=value';
+    expect(Cookie('second_null')).toBe('value');
+    Cookie('second_null', null);
+    expect(Cookie('second_null')).toBe(null);
+  });
+
+  it('should return the set cookie value if the second parater is not null', function() {
+    Cookie('one', '1');
+    expect(Cookie('one')).toBe('1');
+  });
+});
+
 describe('Cookie.enabled()', function() {
   it('should return true if the cookie is enabled', function() {
     expect(Cookie.enabled()).toBe(true);
@@ -8,7 +31,7 @@ describe('Cookie.enabled()', function() {
   });
 });
 
-describe('Cookie.get', function() {
+describe('Cookie.get()', function() {
   it('should return null if the cookie key isn\'t exist', function() {
     expect(Cookie.get('nokey')).toBe(null);
   });
@@ -33,14 +56,14 @@ describe('Cookie.get', function() {
     expect(Cookie.get('')).toBe('onlyvalue');
   });
 
-  // In IE6/7/8/9, it is impossible only key is set.
+  // At least, in IE6/7/8/9, it is impossible only key is set.
   it('should return an empty string if only key is set', function() {
     document.cookie = 'onlykey=';
     expect(Cookie.get('onlykey')).toBe('');
   });
 });
 
-describe('Cookie.set', function() {
+describe('Cookie.set()', function() {
   it('should return the set cookie value', function() {
     Cookie.set('someKey', 'someValue');
 
@@ -61,7 +84,7 @@ describe('Cookie.set', function() {
   });
 });
 
-describe('Cookie.remove', function() {
+describe('Cookie.remove()', function() {
   it('should return null when remove "foo" cookie', function() {
     Cookie.remove('foo');
     expect(Cookie.get('foo')).toBe(null);

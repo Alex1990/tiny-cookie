@@ -16,41 +16,49 @@
     module.exports = factory();
   } else {
     // Browser globals 
-    factory(root);
+    root.Cookie = factory();
   }
 
-}(this, function(root) {
+}(this, function(undefined) {
 
   'use strict';
 
-  var cookie = {
-
-    enabled: function() {
-      var key = '__test_cookie__';
-      document.cookie = key + '=1';
-      return !!cookie.get(key);
-    },
-
-    get: function(key) {
-      if (!arguments.length) return null;
-      key = '(?:^|;)' + escapeRe(key) + (key ? '=' : '') +
-            '([^' + (key ? '' : '=') + ';]*?)(?:;|$)';
-      var reKey = new RegExp(key);
-      var res = reKey.exec(document.cookie.replace(/\s+/g, ''));
-      return res !== null ? decodeURIComponent(res[1]) : null;
-    },
-
-    set: function(key, value, opts) {
-      opts = opts ? convert(opts) : '';
-      var cookie = key + '=' + encodeURIComponent(value) + opts;
-      document.cookie = cookie;
-    },
-
-    remove: function(key) {
-      cookie.set(key, 'a', { expires: new Date().toGMTString() });
+  function Cookie(key, value, opts) {
+    if (value === undefined) {
+      return Cookie.get(key);
+    } else if (value === null) {
+      Cookie.remove(key);
+    } else {
+      Cookie.set(key, value, opts);
     }
+  }
 
+  Cookie.enabled = function() {
+    document.cookie = '__test_key__=1';
+    return !!document.cookie;
   };
+
+  Cookie.get = function(key) {
+    if (key === undefined) return null;
+    key = '(?:^|;)' + escapeRe(key) + (key ? '=' : '') +
+          '([^' + (key ? '' : '=') + ';]*?)(?:;|$)';
+    var reKey = new RegExp(key);
+    var res = reKey.exec(document.cookie.replace(/\s+/g, ''));
+    return res !== null ? decodeURIComponent(res[1]) : null;
+  };
+
+  Cookie.set = function(key, value, opts) {
+    opts = opts ? convert(opts) : '';
+    var cookie = key + '=' + encodeURIComponent(value) + opts;
+    document.cookie = cookie;
+  };
+
+  Cookie.remove = function(key) {
+    Cookie.set(key, 'a', { expires: new Date().toGMTString() });
+  };
+
+  // Helper function
+  // ---------------
 
   function escapeRe(str) {
     return str.replace(/[.*+?^$|[\](){}\\-]/g, '\\$&');
@@ -66,10 +74,6 @@
     return res;
   }
 
-  if (root) {
-    root.Cookie = cookie;
-  }
-
-  return cookie;
+  return Cookie;
 
 }));
