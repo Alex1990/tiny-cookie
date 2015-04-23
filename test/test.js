@@ -1,3 +1,13 @@
+describe('Cookie.enabled()', function() {
+  it('should return true if the cookie is enabled', function() {
+    expect(Cookie.enabled()).toBe(true);
+  });
+
+  it('should return false if the cookie is disabled', function() {
+    expect(Cookie.enabled()).toBe(false);
+  });
+});
+
 describe('Cookie.get', function() {
   it('should return null if the cookie key isn\'t exist', function() {
     expect(Cookie.get('nokey')).toBe(null);

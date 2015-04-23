@@ -25,6 +25,12 @@
 
   var cookie = {
 
+    enabled: function() {
+      var key = '__test_cookie__';
+      document.cookie = key + '=1';
+      return !!cookie.get(key);
+    },
+
     get: function(key) {
       if (!arguments.length) return null;
       key = '(?:^|;)' + escapeRe(key) + (key ? '=' : '') +
