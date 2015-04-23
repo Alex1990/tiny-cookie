@@ -61,6 +61,7 @@ describe('Cookie.get()', function() {
     expect(Cookie.get('')).toBe(null);
   });
 
+  // At least, in IE 9, it is impossible that cookie value is an empty string.
   it('should return an empty string if only key is set', function() {
     document.cookie = 'onlykey=';
     expect(Cookie.get('onlykey')).toBe('');
