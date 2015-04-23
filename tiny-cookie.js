@@ -51,7 +51,7 @@
   Cookie.get = function(key) {
     if (typeof key !== 'string' || !key) return null;
 
-    key = '(?:^|;)' + escapeRe(key) + '=?([^;]*?)(?:;|$)';
+    key = '(?:^|;)' + escapeRe(key) + '(?:=([^;]*?))?(?:;|$)';
 
     var reKey = new RegExp(key);
     var res = reKey.exec(document.cookie.replace(/\s+/g, ''));

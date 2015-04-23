@@ -43,6 +43,7 @@ describe('Cookie.get()', function() {
 
   it('should return "Bar" if "foo" passed', function() {
     document.cookie = 'foo=Bar';
+    document.cookie = 'foofoo=BarBar';
     expect(Cookie.get('foo')).toBe('Bar');
   });
 
