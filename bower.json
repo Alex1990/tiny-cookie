@@ -1,0 +1,25 @@
+{
+  "name": "tiny-cookie",
+  "version": "0.3.1",
+  "homepage": "https://github.com/Alex1990/tiny-cookie",
+  "authors": [
+    "Alex Chao <alexchao1990#gmail.com>"
+  ],
+  "description": "A tiny cookie manipulation plugin.",
+  "moduleType": [
+    "globals",
+    "amd",
+    "node"
+  ],
+  "keywords": [
+    "cookie"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
