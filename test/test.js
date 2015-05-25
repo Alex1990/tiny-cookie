@@ -53,6 +53,20 @@ describe('Cookie.get()', function() {
     expect(Cookie.get('homepage')).toBe(homepage);
   });
 
+  it('should return right value if cookie key contains whitespace', function() {
+    var key = 'he  llo';
+    var value = 'world';
+    document.cookie = key + '=' + value;
+    expect(Cookie.get(key)).toBe(value);
+  });
+
+  it('should return right value if cookie value contains whitespace', function() {
+    var key = 'whitespacevalue';
+    var value = 'va  lue';
+    document.cookie = key + '=' + value;
+    expect(Cookie.get(key)).toBe(value);
+  });
+
   it('should return null if empty string passed', function() {
     document.cookie = 'onlyvalue';
     expect(Cookie.get('')).toBe(null);

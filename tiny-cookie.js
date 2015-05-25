@@ -51,10 +51,10 @@
   Cookie.get = function(key) {
     if (typeof key !== 'string' || !key) return null;
 
-    key = '(?:^|;)' + escapeRe(key) + '(?:=([^;]*?))?(?:;|$)';
+    key = '(?:^|; )' + escapeRe(key) + '(?:=([^;]*?))?(?:;|$)';
 
     var reKey = new RegExp(key);
-    var res = reKey.exec(document.cookie.replace(/\s+/g, ''));
+    var res = reKey.exec(document.cookie);
 
     return res !== null ? decodeURIComponent(res[1]) : null;
   };
