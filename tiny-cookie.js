@@ -48,7 +48,7 @@
   };
 
   // Get the cookie value by the key.
-  Cookie.get = function(key) {
+  Cookie.get = function(key, raw) {
     if (typeof key !== 'string' || !key) return null;
 
     key = '(?:^|; )' + escapeRe(key) + '(?:=([^;]*?))?(?:;|$)';
@@ -56,14 +56,28 @@
     var reKey = new RegExp(key);
     var res = reKey.exec(document.cookie);
 
-    return res !== null ? decodeURIComponent(res[1]) : null;
+    return res !== null ? (raw ? res[1] : decodeURIComponent(res[1])) : null;
+  };
+
+  // Get the cookie's value without decoding.
+  Cookie.getRaw = function(key) {
+    return Cookie.get(key, true);
   };
 
   // Set a cookie.
-  Cookie.set = function(key, value, opts) {
+  Cookie.set = function(key, value, raw, opts) {
+    if (raw !== true) {
+      opts = raw;
+      raw = false;
+    }
     opts = opts ? convert(opts) : '';
-    var cookie = key + '=' + encodeURIComponent(value) + opts;
+    var cookie = key + '=' + (raw ? value : encodeURIComponent(value)) + opts;
     document.cookie = cookie;
+  };
+
+  // Set a cookie without encoding the value.
+  Cookie.setRaw = function(key, value, opts) {
+    Cookie.set(key, value, true, opts);
   };
 
   // Remove a cookie by the specified key.

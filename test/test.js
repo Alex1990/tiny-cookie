@@ -53,6 +53,13 @@ describe('Cookie.get()', function() {
     expect(Cookie.get('homepage')).toBe(homepage);
   });
 
+  it('should return the value without decoding if second parameter is true', function() {
+    var key = 'withoutDecoding';
+    var value = encodeURIComponent('https://github.com/Alex1990/tiny-cookie');
+    document.cookie = key + '=' + value;
+    expect(Cookie.get(key, true)).toBe(value);
+  });
+
   it('should return right value if cookie key contains whitespace', function() {
     var key = 'he  llo';
     var value = 'world';
@@ -82,6 +89,15 @@ describe('Cookie.get()', function() {
   });
 });
 
+describe('Cookie.getRaw()', function() {
+  it('should return the value without decoding', function() {
+    var key = 'withoutDecoding';
+    var value = encodeURIComponent('https://github.com/Alex1990/tiny-cookie');
+    document.cookie = key + '=' + value;
+    expect(Cookie.getRaw(key)).toBe(value);
+  });
+});
+
 describe('Cookie.set()', function() {
   it('should return the set cookie value', function() {
     Cookie.set('someKey', 'someValue');
@@ -94,9 +110,25 @@ describe('Cookie.set()', function() {
     expect(Cookie.get('github')).toBe(github);
   });
 
+  it('should return the value without encoding if the third parameter is true', function() {
+    var key = 'withoutEncoding';
+    var value = 'https://github.com/Alex1990/tiny-cookie';
+    Cookie.setRaw(key, value);
+    expect(Cookie.getRaw(key)).toBe(value);
+  });
+
   it('should return null when cookie path is restricted', function() {
     Cookie.set('path_cookie', 'some_value', { path: '/the-other-path/' });
     expect(Cookie.get('path_cookie')).toBe(null);
+  });
+});
+
+describe('Cookie.setRaw()', function() {
+  it('should return the value without encoding', function() {
+    var key = 'withoutEncoding';
+    var value = 'https://github.com/Alex1990/tiny-cookie';
+    Cookie.setRaw(key, value);
+    expect(Cookie.getRaw(key)).toBe(value);
   });
 });
 

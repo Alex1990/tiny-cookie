@@ -22,13 +22,19 @@ Check if the cookie is enabled.
 
 **Alias: Cookie(key)**
 
-Get the cookie value by the given key.
+Get the cookie value with decoding, using `decodeURIComponent`.
+
+### Cookie.getRaw(key)
+
+**Also: Cookie.get(key, true)**
+
+Get the cookie value without decoding.
 
 ### Cookie.set(key, value, options)
 
 **Alias: Cookie(key, value, options)**
 
-Set a cookie. The `options` parameter is an object. And its property can be a valid cookie option, such as `path`, `domain`, `expires`/`max-age` or `secure`. For example, you can set the expiration:
+Set a cookie with encoding the value, using `encodeURIComponent`. The `options` parameter is an object. And its property can be a valid cookie option, such as `path`, `domain`, `expires`/`max-age` or `secure`. For example, you can set the expiration:
 
 ```js
 var now = new Date;
@@ -36,6 +42,12 @@ now.setMonth(now.getMonth() + 1);
 
 Cookie.set('foo', 'Foo', { expires: now.toGMTString() });
 ```
+
+### Cookie.setRaw(key, value, options)
+
+**Also: Cookie.set(key, value, true, options)**
+
+Set a cookie without encoding.
 
 ### Cookie.remove(key)
 
