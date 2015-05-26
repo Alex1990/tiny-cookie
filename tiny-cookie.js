@@ -82,7 +82,7 @@
 
   // Remove a cookie by the specified key.
   Cookie.remove = function(key) {
-    Cookie.set(key, 'a', { expires: new Date().toGMTString() });
+    Cookie.set(key, 'a', { expires: new Date() });
   };
 
   // Helper function
@@ -106,7 +106,7 @@
             expires += typeof expires === 'number' ? 'D' : '';
             expires = computeExpires(expires);
           }
-          opts[p] = expires.toGMTString();
+          opts[p] = expires.toUTCString();
         }
 
         res = ';' + p + '=' + opts[p];
