@@ -1,4 +1,25 @@
 describe('Cookie()', function() {
+  // Test expires manually.
+  if (Cookie.enabled()) {
+    var now = new Date();
+    now.setDate(now.getDate() + 1);
+    var i = 0;
+    var prefix = function() {
+      i++;
+      return 'expires_' + i + '_';
+    };
+
+    Cookie.setRaw(prefix() + '_dateString', 'A parsable date string', { expires: now.toGMTString() });
+    Cookie.setRaw(prefix() + '_dateObject', 'A date object', { expires: now });
+    Cookie.setRaw(prefix() + '_numberValue', 'Default unit is day', { expires: 7 });
+    Cookie.setRaw(prefix() + '_oneYearLater', 'Suffix char is an uppercase "Y"', { expires: '1Y' });
+    Cookie.setRaw(prefix() + '_oneMonthLater', 'Suffix char is an uppercase "M"', { expires: '1M' });
+    Cookie.setRaw(prefix() + '_oneDayLater', 'Suffix char is an uppercase "D"', { expires: '1D' });
+    Cookie.setRaw(prefix() + '_oneHourLater', 'Suffix char is an lowercase "h"', { expires: '1h' });
+    Cookie.setRaw(prefix() + '_tenMinutesLater', 'Suffix char is an lowercase "m"', { expires: '10m' });
+    Cookie.setRaw(prefix() + '_thirtySecondsLater', 'Suffix char is an lowercase "s"', { expires: '30s' });
+  };
+
   it('should return null if no parameter', function() {
     expect(Cookie()).toBe(null);
   });
