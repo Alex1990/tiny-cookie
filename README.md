@@ -60,7 +60,7 @@ The `expires` property value can accept a `Date` object, a parsable date string 
 | m           | One minute     |
 | s           | One second     |
 
-** Examples: **
+**Examples:**
 
 ```js
 var date = new Date;
