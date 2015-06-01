@@ -40,7 +40,7 @@ Get the cookie value without decoding.
 
 **Alias: Cookie(key, value, options)**
 
-Set a cookie with encoding the value, using `encodeURIComponent`. The `options` parameter is an object. And its property can be a valid cookie option, such as `path`, `domain`, `expires`/`max-age` or `secure`. For example, you can set the expiration:
+Set a cookie with encoding the value, using `encodeURIComponent`. The `options` parameter is an object. And its property can be a valid cookie option, such as `path`(default: root path `/`), `domain`, `expires`/`max-age` or `secure`. For example, you can set the expiration:
 
 ```js
 var now = new Date;
