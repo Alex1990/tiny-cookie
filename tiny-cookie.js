@@ -70,7 +70,7 @@
       opts = raw;
       raw = false;
     }
-    opts = opts ? convert(opts) : '';
+    opts = opts ? convert(opts) : convert({});
     var cookie = key + '=' + (raw ? value : encodeURIComponent(value)) + opts;
     document.cookie = cookie;
   };
@@ -109,8 +109,12 @@
           opts[p] = expires.toUTCString();
         }
 
-        res = ';' + p + '=' + opts[p];
+        res += ';' + p + '=' + opts[p];
       }
+    }
+
+    if (!opts.hasOwnProperty('path')) {
+      res += ';path=/';
     }
 
     return res;

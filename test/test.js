@@ -30,7 +30,7 @@ describe('Cookie()', function() {
   });
 
   it('should remove the cookie value if the second parameter is null', function() {
-    document.cookie = 'second_null=value';
+    document.cookie = 'second_null=value;path=/';
     expect(Cookie('second_null')).toBe('value');
 
     Cookie('second_null', null);
@@ -154,9 +154,10 @@ describe('Cookie.setRaw()', function() {
 });
 
 describe('Cookie.remove()', function() {
-  it('should return null when remove "foo" cookie', function() {
-    Cookie.remove('foo');
-    expect(Cookie.get('foo')).toBe(null);
+  it('should return null when remove "removeKey" cookie', function() {
+    Cookie.set('removeKey', 'removeValue');
+    Cookie.remove('removeKey');
+    expect(Cookie.get('removeKey')).toBe(null);
   });
 
   // it('should return null whe remove the empty string key', function() {

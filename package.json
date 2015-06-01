@@ -1,7 +1,7 @@
 {
   "name": "tiny-cookie",
   "description": "A tiny cookie manipulation plugin",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "author": {
     "name": "Alex Chao",
     "email": "alexchao1990@gmail.com"
