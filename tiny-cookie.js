@@ -19,13 +19,13 @@
     root.Cookie = factory();
   }
 
-}(this, function(undefined) {
+}(this, function() {
 
   'use strict';
 
   // The public function which can get/set/remove cookie.
   function Cookie(key, value, opts) {
-    if (value === undefined) {
+    if (value === void 0) {
       return Cookie.get(key);
     } else if (value === null) {
       Cookie.remove(key);
