@@ -109,6 +109,14 @@
           opts[p] = expires.toUTCString();
         }
 
+        if (p === 'secure') {
+          if (opts[p]) {
+            res += ';' + p;
+          }
+
+          continue;
+        }
+
         res += ';' + p + '=' + opts[p];
       }
     }
