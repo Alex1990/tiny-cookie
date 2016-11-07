@@ -142,6 +142,16 @@ describe('Cookie.set()', function() {
     Cookie.set('path_cookie', 'some_value', { path: '/the-other-path/' });
     expect(Cookie.get('path_cookie')).toBe(null);
   });
+
+  it('should set secure when option is true', function() {
+    Cookie.set('someKey', 'someValue', { secure: true });
+    expect(Cookie.get('someKey')).toBe(null);
+  });
+
+  it('should not set secure when option is false', function() {
+    Cookie.set('someKey', 'someValue', { secure: false });
+    expect(Cookie.get('someKey')).toBe('someValue');
+  });
 });
 
 describe('Cookie.setRaw()', function() {
