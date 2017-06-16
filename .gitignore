@@ -1,4 +1,8 @@
 node_modules
+dist
+lib
+es
+coverage
 .DS_Store
 *.log
 *.swp

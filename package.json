@@ -2,7 +2,25 @@
   "name": "tiny-cookie",
   "version": "1.0.1",
   "description": "A tiny cookie manipulation plugin",
-  "main": "tiny-cookie.js",
+  "main": "lib/tiny-cookie.js",
+  "module": "es/tiny-cookie.js",
+  "files": [
+    "dist",
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf dist lib coverage",
+    "start": "babel-node server.js",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "npm run lint",
+    "build:commonjs": "babel src --out-dir lib",
+    "build:umd": "cross-env NODE_ENV=development rollup -c -i src/index.js -o dist/tiny-cookie.js",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c -i src/index.js -o dist/tiny-cookie.min.js",
+    "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
+    "prepublish": "npm run clean && npm run lint && npm test && npm run build"
+  },
   "author": {
     "name": "Alex Chao",
     "email": "alexchao1990@gmail.com"
@@ -11,24 +29,33 @@
     "type": "git",
     "url": "git://github.com/Alex1990/tiny-cookie.git"
   },
-  "bugs": {
-    "url": "https://github.com/Alex1990/tiny-cookie/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/Alex1990/tiny-cookie/blob/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-jshint": "^1.10.0",
-    "gulp-load-plugins": "^0.10.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.2.0"
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.5.2",
+    "babelrc-rollup": "^3.0.0",
+    "chai": "^4.0.2",
+    "cross-env": "^5.0.1",
+    "express": "^4.15.3",
+    "mocha": "^3.4.2",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.43.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-uglify": "^1.0.2",
+    "standard": "^10.0.2"
   },
   "keywords": [
     "cookie"
-  ]
+  ],
+  "standard": {
+    "ignore": [
+      "dist/",
+      "lib",
+      "test/"
+    ]
+  }
 }
