@@ -54,12 +54,14 @@ function setRaw (key, value, opts) {
 export {
   isEnabled,
   get,
-  getRaw,
   set,
+  getRaw,
   setRaw,
   remove,
   isEnabled as isCookieEnabled,
   get as getCookie,
   set as setCookie,
+  getRaw as getRawCookie,
+  setRaw as setRawCookie,
   remove as removeCookie
 }
