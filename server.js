@@ -13,15 +13,6 @@ const HTTPS_PORT = 8443
 
 app.use(express.static('.'))
 
-app.get('/', (req, res, next) => {
-  const fileName = 'test/SpecRunner.html'
-  res.sendFile(fileName, { root: __dirname }, (err) => {
-    if (err) {
-      next(err)
-    }
-  })
-})
-
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer(credentials, app)
 

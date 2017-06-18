@@ -5,8 +5,5 @@
         "browsers": ["last 4 versions", "ie >= 8", ">= 1%"]
       }
     }]
-  ],
-  "plugins": [
-    "external-helpers"
   ]
 }
