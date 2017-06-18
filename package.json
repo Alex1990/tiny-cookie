@@ -19,8 +19,7 @@
     "build:commonjs": "babel src --out-dir lib",
     "build:umd": "cross-env NODE_ENV=development rollup -c -i src/index.js -o dist/tiny-cookie.js",
     "build:umd:min": "cross-env NODE_ENV=production rollup -c -i src/index.js -o dist/tiny-cookie.min.js",
-    "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
-    "prepublish": "npm run clean && npm run lint && npm test && npm run build"
+    "build": "npm run clean && npm run build:commonjs && npm run build:umd && npm run build:umd:min"
   },
   "author": {
     "name": "Alex Chao",
