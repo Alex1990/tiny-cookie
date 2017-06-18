@@ -135,3 +135,29 @@ describe('Cookie.remove()', function() {
     expect(Cookie.get('removeKey')).to.equal(null);
   });
 });
+
+describe('Aliases', function () {
+  it('isCookieEnabled() should be equal to isEnabled()', function () {
+    expect(Cookie.isCookieEnabled).to.equal(Cookie.isEnabled);
+  });
+
+  it('getCookie() should be euqal to get()', function () {
+    expect(Cookie.getCookie).to.equal(Cookie.get);
+  });
+
+  it('setCookie() should be euqal to set()', function () {
+    expect(Cookie.setCookie).to.equal(Cookie.set);
+  });
+
+  it('removeCookie() should be equal to remove()', function () {
+    expect(Cookie.removeCookie).to.equal(Cookie.remove);
+  });
+
+  it('getRawCookie() should be equal to getRaw()', function () {
+    expect(Cookie.getRawCookie).to.equal(Cookie.getRaw);
+  });
+
+  it('setRawCookie() should be equal to setRaw()', function () {
+    expect(Cookie.setRawCookie).to.equal(Cookie.setRaw);
+  });
+});
