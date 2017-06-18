@@ -117,11 +117,6 @@ describe('Cookie.set()', function() {
     Cookie.set('path_cookie', 'some_value', { path: '/the-other-path/' });
     expect(Cookie.get('path_cookie')).to.equal(null);
   });
-
-  it('should not set secure when option is false', function() {
-    Cookie.set('someKey', 'someValue', { secure: false });
-    expect(Cookie.get('someKey')).to.equal('someValue');
-  });
 });
 
 describe('Cookie.setRaw()', function() {
