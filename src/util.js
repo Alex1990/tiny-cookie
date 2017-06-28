@@ -28,7 +28,7 @@
 
     for (const key in opts) {
       if (opts.hasOwnProperty(key)) {
-        if (key === 'expires') {
+        if (/^expires$/i.test(key)) {
           let expires = opts[key]
 
           if (typeof expires !== 'object') {
@@ -38,7 +38,7 @@
           opts[key] = expires.toUTCString()
         }
 
-        if (key === 'secure') {
+        if (/^secure$/.test(key)) {
           if (opts[key]) {
             res += `;${key}`
           }
