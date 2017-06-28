@@ -12,8 +12,7 @@
   "scripts": {
     "clean": "rimraf dist lib coverage",
     "start": "babel-node server.js",
-    "lint": "standard",
-    "lint:fix": "standard --fix",
+    "lint": "eslint src",
     "test": "karma start",
     "test:CI": "karma start karma.saucelabs.conf.js",
     "build:commonjs": "babel src --out-dir lib",
@@ -40,6 +39,9 @@
     "babelrc-rollup": "^3.0.0",
     "chai": "^4.0.2",
     "cross-env": "^5.0.1",
+    "eslint": "^4.1.1",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.6.0",
     "express": "^4.15.3",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.1.1",
@@ -49,8 +51,7 @@
     "rimraf": "^2.6.1",
     "rollup": "^0.43.0",
     "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-uglify": "^1.0.2",
-    "standard": "^10.0.2"
+    "rollup-plugin-uglify": "^1.0.2"
   },
   "keywords": [
     "cookie"
