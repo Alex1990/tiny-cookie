@@ -115,7 +115,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_DEBUG,
     autoWatch: false,
-    browsers: Object.keys(customLaunchers),,
+    browsers: Object.keys(customLaunchers),
     sauceLabs: {
       testName: 'tiny-cookie'
     },
