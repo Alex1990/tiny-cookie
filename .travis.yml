@@ -4,4 +4,5 @@ node_js:
 addons:
   sauce_connect: true
 script:
+  - npm run build
   - npm run test:CI
