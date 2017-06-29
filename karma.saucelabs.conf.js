@@ -2,7 +2,7 @@
 // Generated on Sat Jun 17 2017 00:55:49 GMT+0800 (CST)
 
 module.exports = function(config) {
-  const customLanchers = {
+  const customLaunchers = {
     'SL_Chrome': {
       base: 'SauceLabs',
       browserName: 'chrome',
@@ -119,7 +119,7 @@ module.exports = function(config) {
     sauceLabs: {
       testName: 'tiny-cookie'
     },
-    customLanchers: customLaunchers,
+    customLaunchers: customLaunchers,
     singleRun: true,
     concurrency: Infinity
   })
