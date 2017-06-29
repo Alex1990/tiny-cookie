@@ -1,6 +1,8 @@
 # tiny-cookie
 
-A tiny cookie manipulation plugin.
+[![Build Status](https://travis-ci.org/Alex1990/tiny-cookie.svg?branch=master)](https://travis-ci.org/Alex1990/tiny-cookie)
+
+A tiny cookie manipulation plugin for browser.
 
 ## Packages
 
@@ -37,21 +39,25 @@ The tiny-cookie will expose a method `Cookie` on the global scope. Also, it can 
 
 ### isEnabled()
 
+**Alias: isCookieEnabled`
+
 Check if the cookie is enabled.
 
 ### get(key)
 
-**Alias: getCookie(key)**
+**Alias: getCookie**
 
 Get the cookie value with decoding, using `decodeURIComponent`.
 
 ### getRaw(key)
 
+**Alias: getRawCookie**
+
 Get the cookie value without decoding.
 
 ### set(key, value, options)
 
-**Alias: setCookie(key, value, options)**
+**Alias: setCookie**
 
 Set a cookie with encoding the value, using `encodeURIComponent`. The `options` parameter is an object. And its property can be a valid cookie option, such as `path`(default: root path `/`), `domain`, `expires`/`max-age` or `secure` (Note: the `secure` flag will be set if it is an truthy value, such as `true`, or it will be not set). For example, you can set the expiration:
 
@@ -96,9 +102,13 @@ setCookie('stringSuffixs', 'Thirty seconds later', { expires: '30s' });
 
 ### setRaw(key, value, options)
 
+**Alias: setRawCookie**
+
 Set a cookie without encoding.
 
 ### remove(key)
+
+**Alias: removeCookie**
 
 Remove a cookie.
 
