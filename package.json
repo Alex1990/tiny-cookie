@@ -14,7 +14,7 @@
     "start": "babel-node server.js",
     "lint": "eslint src",
     "test": "karma start",
-    "test:CI": "karma start karma.saucelabs.conf.js",
+    "test:saucelabs": "karma start karma.saucelabs.conf.js",
     "build:commonjs": "babel src --out-dir lib",
     "build:umd": "cross-env NODE_ENV=development rollup -c -i src/index.js -o dist/tiny-cookie.js",
     "build:umd:min": "cross-env NODE_ENV=production rollup -c -i src/index.js -o dist/tiny-cookie.min.js",
