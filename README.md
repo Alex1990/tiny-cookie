@@ -55,6 +55,12 @@ Get the cookie value with decoding, using `decodeURIComponent`.
 
 Get the cookie value without decoding.
 
+### getAll()
+
+**Alias: getAllCookies**
+
+Get all cookies with decoding, using `decodeURIComponent`.
+
 ### set(key, value, options)
 
 **Alias: setCookie**

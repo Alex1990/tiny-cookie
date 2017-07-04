@@ -94,6 +94,18 @@ describe('Cookie.getRaw()', function() {
   });
 });
 
+describe('Cookie.getAll()', function() {
+  it('should return all the cookies', function() {
+    document.cookie = 'foo=hello';
+    document.cookie = 'bar=world';
+    document.cookie = 'baz=42';
+    const cookies = Cookie.getAll();
+    expect(cookies.foo).to.equal('hello');
+    expect(cookies.bar).to.equal('world');
+    expect(cookies.baz).to.equal('42');
+  });
+});
+
 describe('Cookie.set()', function() {
   it('should return the set cookie value', function() {
     Cookie.set('someKey', 'someValue');
@@ -130,34 +142,38 @@ describe('Cookie.setRaw()', function() {
 
 describe('Cookie.remove()', function() {
   it('should return null when remove "removeKey" cookie', function() {
-    Cookie.set('removeKey', 'removeValue');
+    document.cookie = 'removeKey=removeValue;path=/';
     Cookie.remove('removeKey');
     expect(Cookie.get('removeKey')).to.equal(null);
   });
 });
 
 describe('Aliases', function () {
-  it('isCookieEnabled() should be equal to isEnabled()', function () {
+  it('isCookieEnabled should be equal to isEnabled', function () {
     expect(Cookie.isCookieEnabled).to.equal(Cookie.isEnabled);
   });
 
-  it('getCookie() should be euqal to get()', function () {
+  it('getCookie should be equal to get', function () {
     expect(Cookie.getCookie).to.equal(Cookie.get);
   });
 
-  it('setCookie() should be euqal to set()', function () {
+  it('getAllCookies should be equal to getAll', function () {
+    expect(Cookie.getAllCookies).to.equal(Cookie.getAll);
+  });
+
+  it('setCookie should be equal to set', function () {
     expect(Cookie.setCookie).to.equal(Cookie.set);
   });
 
-  it('removeCookie() should be equal to remove()', function () {
+  it('removeCookie should be equal to remove', function () {
     expect(Cookie.removeCookie).to.equal(Cookie.remove);
   });
 
-  it('getRawCookie() should be equal to getRaw()', function () {
+  it('getRawCookie should be equal to getRaw', function () {
     expect(Cookie.getRawCookie).to.equal(Cookie.getRaw);
   });
 
-  it('setRawCookie() should be equal to setRaw()', function () {
+  it('setRawCookie should be equal to setRaw', function () {
     expect(Cookie.setRawCookie).to.equal(Cookie.setRaw);
   });
 });

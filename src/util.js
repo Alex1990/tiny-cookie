@@ -59,6 +59,7 @@ function convert(opts) {
 }
 
 export {
+  hasOwn,
   escapeRe,
   computeExpires,
   convert,

@@ -25,18 +25,33 @@ function get(key, decoder = decodeURIComponent) {
   }
 
   const reKey = new RegExp(`(?:^|; )${escapeRe(key)}(?:=([^;]*))?(?:;|$)`);
-  const matchedValue = reKey.exec(document.cookie);
+  const match = reKey.exec(document.cookie);
 
-  if (matchedValue === null) {
+  if (match === null) {
     return null;
   }
 
-  return typeof decoder === 'function' ? decoder(matchedValue[1]) : matchedValue[1];
+  return typeof decoder === 'function' ? decoder(match[1]) : match[1];
+}
+
+// The all cookies
+function getAll(decoder = decodeURIComponent) {
+  const reKey = /(?:^|; )([^=]+?)(?:=([^;]*))?(?:;|$)/g;
+  const cookies = {};
+  let match;
+
+  /* eslint-disable no-cond-assign */
+  while ((match = reKey.exec(document.cookie))) {
+    reKey.lastIndex = (match.index + match.length) - 1;
+    cookies[match[1]] = typeof decoder === 'function' ? decoder(match[2]) : match[2];
+  }
+
+  return cookies;
 }
 
 // Set a cookie.
 function set(key, value, encoder = encodeURIComponent, attrs) {
-  if (typeof encoder === 'object') {
+  if (typeof encoder === 'object' && encoder !== null) {
     /* eslint-disable no-param-reassign */
     attrs = encoder;
     encoder = null;
@@ -50,7 +65,7 @@ function set(key, value, encoder = encodeURIComponent, attrs) {
 
 // Remove a cookie by the specified key.
 function remove(key) {
-  return set(key, 'a', { expires: new Date() });
+  return set(key, 'a', { expires: -1 });
 }
 
 // Get the cookie's value without decoding.
@@ -66,12 +81,14 @@ function setRaw(key, value, opts) {
 export {
   isEnabled,
   get,
+  getAll,
   set,
   getRaw,
   setRaw,
   remove,
   isEnabled as isCookieEnabled,
   get as getCookie,
+  getAll as getAllCookies,
   set as setCookie,
   getRaw as getRawCookie,
   setRaw as setRawCookie,
