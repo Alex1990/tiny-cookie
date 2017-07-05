@@ -39,7 +39,7 @@ The tiny-cookie will expose a method `Cookie` on the global scope. Also, it can 
 
 ### isEnabled()
 
-**Alias: isCookieEnabled`
+**Alias: isCookieEnabled**
 
 Check if the cookie is enabled.
 
