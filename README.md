@@ -33,7 +33,7 @@ import { isEnabled, get, set, remove } from 'tiny-cookie'
 import { isCookieEnabled, getCookie, setCookie, removeCookie } from 'tiny-cookie'
 ```
 
-The tiny-cookie will expose a method `Cookie` on the global scope. Also, it can be as a CommonJS/AMD module (**recommended**).
+The tiny-cookie will expose an object `Cookie` on the global scope. Also, it can be as a CommonJS/AMD module (**recommended**).
 
 ## APIs
 
