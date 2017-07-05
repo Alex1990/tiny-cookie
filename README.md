@@ -90,7 +90,7 @@ The `expires` property value can accept a `Date` object, a parsable date string 
 **Examples:**
 
 ```js
-const { setCookie } from 'tiny-cookie';
+import { setCookie } from 'tiny-cookie';
 const date = new Date;
 
 date.setDate(date.getDate() + 21);
