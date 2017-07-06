@@ -4,5 +4,8 @@ node_js:
 dist: trusty
 addons:
   chrome: stable
+before_script:
+  - npm i -g codecov
 script:
   - npm test
+  - codecov
