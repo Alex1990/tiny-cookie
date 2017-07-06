@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.org/Alex1990/tiny-cookie.svg?branch=master)](https://travis-ci.org/Alex1990/tiny-cookie)
 [![codecov](https://codecov.io/gh/Alex1990/tiny-cookie/branch/master/graph/badge.svg)](https://codecov.io/gh/Alex1990/tiny-cookie)
-[![npm](https://img.shields.io/npm/v/tiny-cookie.svg)]()
 [![npm](https://img.shields.io/npm/dm/tiny-cookie.svg)]()
+[![npm](https://img.shields.io/npm/v/tiny-cookie.svg)]()
 
 A tiny cookie manipulation plugin for browser.
 
