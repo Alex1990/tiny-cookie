@@ -15,12 +15,6 @@ A tiny cookie manipulation plugin for browser.
 npm install tiny-cookie
 ```
 
-**Bower:**
-
-```bash
-bower install tiny-cookie
-```
-
 ## Usage
 
 **ES2015 (recommended)**
