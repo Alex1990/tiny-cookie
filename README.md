@@ -33,13 +33,13 @@ import { isEnabled, get, set, remove } from 'tiny-cookie'
 import { isCookieEnabled, getCookie, setCookie, removeCookie } from 'tiny-cookie'
 ```
 
-The tiny-cookie will expose a method `Cookie` on the global scope. Also, it can be as a CommonJS/AMD module (**recommended**).
+The tiny-cookie will expose an object `Cookie` on the global scope. Also, it can be as a CommonJS/AMD module (**recommended**).
 
 ## APIs
 
 ### isEnabled()
 
-**Alias: isCookieEnabled`
+**Alias: isCookieEnabled**
 
 Check if the cookie is enabled.
 
@@ -90,7 +90,7 @@ The `expires` property value can accept a `Date` object, a parsable date string 
 **Examples:**
 
 ```js
-const { setCookie } from 'tiny-cookie';
+import { setCookie } from 'tiny-cookie';
 const date = new Date;
 
 date.setDate(date.getDate() + 21);
