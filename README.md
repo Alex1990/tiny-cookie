@@ -1,6 +1,7 @@
 # tiny-cookie
 
 [![Build Status](https://travis-ci.org/Alex1990/tiny-cookie.svg?branch=master)](https://travis-ci.org/Alex1990/tiny-cookie)
+[![codecov](https://codecov.io/gh/Alex1990/tiny-cookie/branch/master/graph/badge.svg)](https://codecov.io/gh/Alex1990/tiny-cookie)
 
 A tiny cookie manipulation plugin for browser.
 
