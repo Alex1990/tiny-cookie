@@ -11,7 +11,7 @@ With modern development workflow, such as Babel, Rollup, Karma, npm scripts and 
 2017-07-06
 
 - **Breaking change**: Do not support the `Cookie` as a function.
-- **Breaking change**: There is not a default export. That is, `import cookie from 'tiny-cookie` doesn't work. You can do it like this `import * as cookie from 'tiny-cookie'`.
+- **Breaking change**: There is not a default export. That is, `import cookie from 'tiny-cookie` doesn't work. The reason why it hasn't a default export is it will prevent the webpack tree-shaking working. You can do it like this `import * as cookie from 'tiny-cookie'`.[#14](https://github.com/Alex1990/tiny-cookie/issues/14)
 - **Breaking change**: Rename `enabled` method to `isEnabled`.
 - **Feature**: Add `getAll` method to get all cookie pairs at a time.
 - **Feature**: Add aliases for all methods, for details, you can see [API](https://github.com/Alex1990/tiny-cookie#apis)
