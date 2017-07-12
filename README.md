@@ -7,6 +7,8 @@
 
 A tiny cookie manipulation plugin for browser.
 
+**Upgrade 1.x to 2.x**: You can check the [CHANGELOG.md](https://github.com/Alex1990/tiny-cookie/blob/master/CHANGELOG.md#v200)
+
 ## Packages
 
 **NPM:**
