@@ -99,7 +99,7 @@ describe('Cookie.getAll()', function() {
     document.cookie = 'foo=hello';
     document.cookie = 'bar=world';
     document.cookie = 'baz=42';
-    const cookies = Cookie.getAll();
+    var cookies = Cookie.getAll();
     expect(cookies.foo).to.equal('hello');
     expect(cookies.bar).to.equal('world');
     expect(cookies.baz).to.equal('42');
