@@ -3,7 +3,18 @@
     ["env", {
       "targets": {
         "browsers": ["last 4 versions", "ie >= 8", ">= 1%"]
-      }
+      },
+      "loose": true,
+      "modules": false
     }]
-  ]
+  ],
+  "env": {
+    "commonjs": {
+      "plugins": [
+        ["transform-es2015-modules-commonjs", { "loose": true }]
+      ]
+    },
+    "es": {
+    }
+  }
 }

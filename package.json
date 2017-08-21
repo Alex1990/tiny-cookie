@@ -3,22 +3,24 @@
   "version": "2.0.1",
   "description": "A tiny cookie manipulation plugin",
   "main": "lib/index.js",
-  "module": "src/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
   "files": [
     "dist",
     "lib",
     "src"
   ],
   "scripts": {
-    "clean": "rimraf dist lib coverage",
-    "start": "babel-node server.js",
+    "clean": "rimraf dist lib es coverage",
+    "start": "cross-env BABEL_ENV=commonjs babel-node server.js",
     "lint": "eslint src",
     "test": "npm run build && karma start",
     "test:saucelabs": "npm run build && karma start karma.saucelabs.conf.js",
-    "build:commonjs": "babel src --out-dir lib",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "build:umd": "cross-env NODE_ENV=development rollup -c -i src/index.js -o dist/tiny-cookie.js",
     "build:umd:min": "cross-env NODE_ENV=production rollup -c -i src/index.js -o dist/tiny-cookie.min.js",
-    "build": "npm run clean && npm run build:commonjs && npm run build:umd && npm run build:umd:min"
+    "build": "npm run clean && npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min"
   },
   "author": {
     "name": "Alex Chao",
