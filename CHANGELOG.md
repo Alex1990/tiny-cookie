@@ -1,3 +1,9 @@
+### v2.0.2
+
+2017-08-21
+
+- **Fix**: Fix the es modules build [#16](https://github.com/Alex1990/tiny-cookie/issues/16)
+
 ### v2.0.1
 
 2017-07-12
