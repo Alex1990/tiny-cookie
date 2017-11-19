@@ -111,11 +111,11 @@ setCookie('stringSuffixs', 'Thirty seconds later', { expires: '30s' });
 
 Set a cookie without encoding.
 
-### remove(key)
+### remove(key, options)
 
 **Alias: removeCookie**
 
-Remove a cookie.
+Remove a cookie on the current domain. If you want to remove the parent domain's cookie, you can use the `options` parameter, such as `remove('cookieName', { domain: 'parentdomain.com' })`.
 
 ## FAQ
 

@@ -1,5 +1,9 @@
 ### v2.0.2
 
+2017-11-19
+
+- **Feature**: The `remove()` method supports configuring the domain parameter.
+
 2017-08-21
 
 - **Fix**: Fix the es modules build [#16](https://github.com/Alex1990/tiny-cookie/issues/16)
