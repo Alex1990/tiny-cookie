@@ -54,7 +54,7 @@ function set(key, value, encoder = encodeURIComponent, attrs) {
   if (typeof encoder === 'object' && encoder !== null) {
     /* eslint-disable no-param-reassign */
     attrs = encoder;
-    encoder = null;
+    encoder = encodeURIComponent;
     /* eslint-enable no-param-reassign */
   }
   const attrsStr = convert(attrs || {});

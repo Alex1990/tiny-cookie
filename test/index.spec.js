@@ -115,7 +115,11 @@ describe('Cookie.set()', function() {
   it('should return the decoded value', function() {
     var github = 'https://github.com/Alex1990';
     Cookie.set('github', github);
-    expect(Cookie.get('github')).to.equal(github);
+    expect(Cookie.getRaw('github')).to.equal(encodeURIComponent(github));
+
+    var tinyCookie = 'https://github.com/Alex1990/tiny-cookie';
+    Cookie.set('tinyCookie', tinyCookie, { expires: 7 });
+    expect(Cookie.getRaw('tinyCookie')).to.equal(encodeURIComponent(tinyCookie));
   });
 
   it('should return the value without encoding if the third parameter is true', function() {
