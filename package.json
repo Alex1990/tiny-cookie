@@ -11,7 +11,7 @@
     "lib",
     "es",
     "src",
-    "test"
+    "types"
   ],
   "scripts": {
     "clean": "rimraf dist lib es coverage",
