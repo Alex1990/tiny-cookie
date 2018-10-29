@@ -5,11 +5,13 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
+  "typings": "types/index.d.ts",
   "files": [
     "dist",
     "lib",
     "es",
-    "src"
+    "src",
+    "test"
   ],
   "scripts": {
     "clean": "rimraf dist lib es coverage",
