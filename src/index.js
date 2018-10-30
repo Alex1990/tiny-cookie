@@ -50,14 +50,14 @@ function getAll(decoder = decodeURIComponent) {
 }
 
 // Set a cookie.
-function set(key, value, encoder = encodeURIComponent, attrs) {
+function set(key, value, encoder = encodeURIComponent, options) {
   if (typeof encoder === 'object' && encoder !== null) {
     /* eslint-disable no-param-reassign */
-    attrs = encoder;
+    options = encoder;
     encoder = encodeURIComponent;
     /* eslint-enable no-param-reassign */
   }
-  const attrsStr = convert(attrs || {});
+  const attrsStr = convert(options || {});
   const valueStr = typeof encoder === 'function' ? encoder(value) : value;
   const newCookie = `${key}=${valueStr}${attrsStr}`;
   document.cookie = newCookie;
@@ -80,8 +80,8 @@ function getRaw(key) {
 }
 
 // Set a cookie without encoding the value.
-function setRaw(key, value, opts) {
-  return set(key, value, null, opts);
+function setRaw(key, value, options) {
+  return set(key, value, null, options);
 }
 
 export {
