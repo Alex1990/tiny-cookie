@@ -5,11 +5,13 @@
 [![npm](https://img.shields.io/npm/dm/tiny-cookie.svg)](https://www.npmjs.com/package/tiny-cookie)
 [![npm](https://img.shields.io/npm/v/tiny-cookie.svg)](https://www.npmjs.com/package/tiny-cookie)
 
+**English | [简体中文](README_zh-CN.md)**
+
 A tiny cookie manipulation plugin for browser.
 
 **Upgrade from 1.x to 2.x**: You can check the [CHANGELOG.md](https://github.com/Alex1990/tiny-cookie/blob/master/CHANGELOG.md#v200)
 
-## Packages
+## Install
 
 **NPM:**
 
