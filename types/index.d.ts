@@ -7,9 +7,11 @@ interface Cookies<T = string> {
 
 export interface CookieOptions {
   domain?: string
-  expires?: string
-  secure?: boolean
   path?: string
+  expires?: string | number
+  'max-age'?: number
+  secure?: boolean
+  samesite?: string
 }
 
 declare function isEnabled() : boolean;
@@ -32,7 +34,7 @@ declare function set<T = string>(key : string, value : T, encoder : Encoder<T>, 
 /**
  * Set a cookie.
  */
-declare function set(key : string, value : string, attrs?: CookieOptions) : void;
+declare function set(key : string, value : string, options?: CookieOptions) : void;
 
 /**
  * Remove a cookie by the specified key.
