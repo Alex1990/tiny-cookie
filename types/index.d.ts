@@ -1,5 +1,5 @@
-type Decoder<T = string> = (value : string) => T;
-type Encoder<T = string> = (value : T) => string;
+type Decoder<T = string> = (value: string) => T;
+type Encoder<T = string> = (value: T) => string;
 
 interface Cookies<T = string> {
   [key: string] : T
@@ -19,7 +19,7 @@ declare function isEnabled() : boolean;
 /**
  * Get the cookie value by key.
  */
-declare function get<T = string>(key : string, decoder?: Decoder<T>) : T | null;
+declare function get<T = string>(key: string, decoder?: Decoder<T>) : T | null;
 
 /**
  * Get all cookies
@@ -29,27 +29,27 @@ declare function getAll<T = string>(decoder?: Decoder<T>) : Cookies<T>;
 /**
  * Set a cookie.
  */
-declare function set<T = string>(key : string, value : T, encoder : Encoder<T>, options?: CookieOptions) : void;
+declare function set<T = string>(key: string, value: T, encoder : Encoder<T>, options?: CookieOptions) : void;
 
 /**
  * Set a cookie.
  */
-declare function set(key : string, value : string, options?: CookieOptions) : void;
+declare function set(key: string, value: string, options?: CookieOptions) : void;
 
 /**
  * Remove a cookie by the specified key.
  */
-declare function remove(key : string, options?: CookieOptions) : void;
+declare function remove(key: string, options?: CookieOptions) : void;
 
 /**
  * Get the cookie's value without decoding.
  */
-declare function getRaw(key : string) : string | null;
+declare function getRaw(key: string) : string | null;
 
 /**
  * Set a cookie without encoding the value.
  */
-declare function setRaw(key : string, value : string, options?: CookieOptions) : void;
+declare function setRaw(key: string, value: string, options?: CookieOptions) : void;
 
 export {
   isEnabled,
