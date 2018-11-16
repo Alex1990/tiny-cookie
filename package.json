@@ -7,6 +7,7 @@
   "jsnext:main": "es/index.js",
   "typings": "types/index.d.ts",
   "files": [
+    "flow",
     "dist",
     "lib",
     "es",
