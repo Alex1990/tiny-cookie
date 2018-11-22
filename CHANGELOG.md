@@ -1,3 +1,7 @@
+### v2.3.0
+
+- **Feature**: Add flow types.
+
 ### v2.2.0
 
 - **Feature**: Add typescript types.
