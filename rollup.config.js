@@ -8,11 +8,11 @@ const config = {
   output: {
     file: 'dist/tiny-cookie.js',
     format: 'umd',
-    name: 'Cookie',
+    name: 'Cookie'
   },
   plugins: [
-    babel(),
-  ],
+    babel()
+  ]
 };
 
 if (env === 'production') {
@@ -22,9 +22,9 @@ if (env === 'production') {
       compress: {
         pure_getters: true,
         unsafe: true,
-        warnings: false,
-      },
-    }),
+        warnings: false
+      }
+    })
   );
 }
 
