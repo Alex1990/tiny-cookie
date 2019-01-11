@@ -1,3 +1,7 @@
+### v2.3.1
+
+- **Fix**: Fix path option is ignored when removeCookie is called #27
+
 ### v2.3.0
 
 - **Feature**: Add flow types.
