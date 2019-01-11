@@ -65,10 +65,10 @@ function set(key, value, encoder = encodeURIComponent, options) {
 
 // Remove a cookie by the specified key.
 function remove(key, options) {
-  const opts = { expires: -1 };
+  let opts = { expires: -1 };
 
-  if (options && options.domain) {
-    opts.domain = options.domain;
+  if (options) {
+    opts = { ...options, ...opts };
   }
 
   return set(key, 'a', opts);

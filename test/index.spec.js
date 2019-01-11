@@ -150,6 +150,19 @@ describe('Cookie.remove()', function() {
     Cookie.remove('removeKey');
     expect(Cookie.get('removeKey')).to.equal(null);
   });
+
+  it('should remove the cookie under the specified path', function () {
+    document.cookie = 'pathCookie=pathCookie;';
+    var path = location.pathname;
+    var lastSlashIndex = path.lastIndexOf('/');
+    if (lastSlashIndex > -1) {
+      path = path.slice(0, lastSlashIndex);
+    }
+    Cookie.remove('pathCookie', {
+      path: path || '/',
+    });
+    expect(Cookie.get('pathCookie')).to.equal(null);
+  });
 });
 
 describe('Aliases', function () {
