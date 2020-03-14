@@ -22,7 +22,6 @@ if (env === 'production') {
       compress: {
         pure_getters: true,
         unsafe: true,
-        warnings: false
       }
     })
   );
