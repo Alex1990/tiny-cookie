@@ -6,7 +6,7 @@ function isEnabled() {
   const value = '1';
   const re = new RegExp(`(?:^|; )${key}=${value}(?:;|$)`);
 
-  document.cookie = `${key}=${value}`;
+  document.cookie = `${key}=${value};path=/`;
 
   const enabled = re.test(document.cookie);
 
