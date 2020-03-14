@@ -1,3 +1,7 @@
+### v2.3.2
+
+- **Fix**: Set path to root when testing if cookies are enabled #28
+
 ### v2.3.1
 
 - **Fix**: Fix path option is ignored when removeCookie is called #27
