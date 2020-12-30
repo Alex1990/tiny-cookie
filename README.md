@@ -11,6 +11,8 @@ A tiny cookie manipulation plugin for browser.
 
 **Upgrade from 1.x to 2.x**: You can check the [CHANGELOG.md](https://github.com/Alex1990/tiny-cookie/blob/master/CHANGELOG.md#v200)
 
+> If you're used tiny-cookie, then you may be interest in [micell](https://micell.org), a collection of functions focusing on web development.
+
 ## Install
 
 **NPM:**
