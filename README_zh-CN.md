@@ -1,7 +1,7 @@
 # tiny-cookie
 
-[![Build Status](https://travis-ci.com/Alex1990/tiny-cookie.svg?branch=master)](https://travis-ci.com/Alex1990/tiny-cookie)
-[![codecov](https://codecov.io/gh/Alex1990/tiny-cookie/branch/master/graph/badge.svg)](https://codecov.io/gh/Alex1990/tiny-cookie)
+[![Node.js CI](https://github.com/Alex1990/tiny-cookie/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/Alex1990/tiny-cookie/actions/workflows/node.js.yml)
+[![codecov](https://codecov.io/gh/Alex1990/tiny-cookie/branch/main/graph/badge.svg)](https://codecov.io/gh/Alex1990/tiny-cookie)
 [![npm](https://img.shields.io/npm/dm/tiny-cookie.svg)](https://www.npmjs.com/package/tiny-cookie)
 [![npm](https://img.shields.io/npm/v/tiny-cookie.svg)](https://www.npmjs.com/package/tiny-cookie)
 
