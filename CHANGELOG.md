@@ -1,3 +1,10 @@
+### v2.4.0
+
+In this version, it is refactored in typescript and the development dependencies are upgraded to latest.
+
+- **Feature**: Support [Conditional exports](https://nodejs.org/api/packages.html#conditional-exports)
+- **Fix**: Fix the type declaration of `CookieOptions`, `get`/`getCookie`, `getAll` and `set`/`setCookie`
+- **Test**: Use Github Actions instead of Travis CI
 ### v2.3.2
 
 - **Fix**: Set path to root when testing if cookies are enabled #28
