@@ -15,7 +15,7 @@
     "types"
   ],
   "scripts": {
-    "clean": "rimraf dist lib es coverage",
+    "clean": "rimraf dist coverage",
     "start": "ts-node-esm --project tsconfig.node.json server.ts",
     "lint": "eslint src",
     "test": "npm run build && karma start",
