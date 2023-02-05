@@ -1,30 +1,28 @@
-import babel from 'rollup-plugin-babel';
-import { uglify } from 'rollup-plugin-uglify';
+import typescript from '@rollup/plugin-typescript';
+import terser from '@rollup/plugin-terser';
 
-const env = process.env.NODE_ENV;
+const isProd = process.env.NODE_ENV === 'production';
+const format = process.env.FORMAT;
 
 const config = {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: {
     file: 'dist/tiny-cookie.js',
-    format: 'umd',
-    name: 'Cookie'
+    format,
+    name: 'Cookie',
   },
-  plugins: [
-    babel()
-  ]
+  plugins: [typescript()],
 };
 
-if (env === 'production') {
+if (format === 'es') {
+  config.output.file = 'dist/tiny-cookie.esm.js';
+} else if (format === 'cjs') {
+  config.output.file = 'dist/tiny-cookie.cjs.js';
+}
+
+if (isProd) {
   config.output.file = 'dist/tiny-cookie.min.js';
-  config.plugins.push(
-    uglify({
-      compress: {
-        pure_getters: true,
-        unsafe: true,
-      }
-    })
-  );
+  config.plugins.push(terser());
 }
 
 export default config;
