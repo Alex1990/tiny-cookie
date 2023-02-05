@@ -61,7 +61,10 @@
     "typescript": "^4.8.4"
   },
   "keywords": [
-    "cookie"
+    "cookie",
+    "browser cookie",
+    "tiny",
+    "tiny cookie"
   ],
   "pre-commit": [
     "lint"
