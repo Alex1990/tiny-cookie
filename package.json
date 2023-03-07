@@ -1,6 +1,6 @@
 {
   "name": "tiny-cookie",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "A tiny cookie manipulation plugin",
   "main": "./dist/tiny-cookie.cjs.js",
   "module": "./dist/tiny-cookie.mjs",
