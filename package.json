@@ -3,13 +3,13 @@
   "version": "2.4.0",
   "description": "A tiny cookie manipulation plugin",
   "main": "./dist/tiny-cookie.cjs.js",
-  "module": "./dist/tiny-cookie.esm.js",
-  "jsnext:main": "./dist/tiny-cookie.esm.js",
+  "module": "./dist/tiny-cookie.mjs",
+  "jsnext:main": "./dist/tiny-cookie.mjs",
   "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/tiny-cookie.cjs.js",
-      "import": "./dist/tiny-cookie.esm.js",
+      "import": "./dist/tiny-cookie.mjs",
       "types": "./dist/index.d.ts"
     }
   },

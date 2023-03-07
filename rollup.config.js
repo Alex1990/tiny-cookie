@@ -15,7 +15,7 @@ const config = {
 };
 
 if (format === 'es') {
-  config.output.file = 'dist/tiny-cookie.esm.js';
+  config.output.file = 'dist/tiny-cookie.mjs';
 } else if (format === 'cjs') {
   config.output.file = 'dist/tiny-cookie.cjs.js';
 }
