@@ -4,7 +4,13 @@
   "plugins": ["@typescript-eslint"],
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "Cookie": true,
+    "chai": true,
+    "expect": true
   },
   "rules": {}
 }
