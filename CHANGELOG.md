@@ -1,3 +1,11 @@
+### v2.5.0
+
+- **Types**: Support `partitioned` property in `CookieOptions` type definition.
+
+### v2.4.1
+
+- **Fix**: Fix import error in node environment #35
+
 ### v2.4.0
 
 In this version, it is refactored in typescript and the development dependencies are upgraded to latest.
