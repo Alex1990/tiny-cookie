@@ -1,3 +1,7 @@
+### v2.5.1
+
+- **Fix**: The partitioned option should be set as secure option (#41)
+
 ### v2.5.0
 
 - **Types**: Support `partitioned` property in `CookieOptions` type definition.
