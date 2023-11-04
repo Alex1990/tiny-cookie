@@ -57,7 +57,7 @@ export function convert(opts: CookieOptions): string {
         expiresDate = computeExpires(String(expires));
       }
       res += `;${key}=${expiresDate.toUTCString()}`;
-    } else if (/^secure$/.test(key)) {
+    } else if (/^secure|partitioned$/.test(key)) {
       if (opts[key as keyof CookieOptions]) {
         res += `;${key}`;
       }
